@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.uacam.fi.sistemacitas.HelloController">
+   <left>
+      <VBox prefHeight="400.0" prefWidth="170.0" spacing="10.0" style="-fx-padding: 10;" BorderPane.alignment="CENTER">
+         <children>
+            <Label style="-fx-font-weight: bold;" text="Bandeja de Entrada" />
+
+            <ListView fx:id="listaMensajes" onMouseClicked="#onMensajeSeleccionado" prefHeight="350.0" prefWidth="150.0">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="Ana" />
+                     <String fx:value="Carlos" />
+                     <String fx:value="Valeria" />
+                  </FXCollections>
+               </items>
+            </ListView>
+
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="15.0" style="-fx-padding: 20;" BorderPane.alignment="CENTER">
+         <children>
+
+            <Label fx:id="lblRemitente" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Selecciona un mensaje" />
+
+            <TextArea fx:id="txtMensaje" editable="false" prefHeight="150.0" prefWidth="200.0" text="Haz clic en un nombre de la lista para leer su mensaje." wrapText="true" />
+
+            <HBox prefHeight="50.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onAceptarSolicitudClick" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;" text="Aceptar" />
+                  <Button mnemonicParsing="false" onAction="#onRechazarSolicitudClick" text="Rechazar" />
+               </children>
+            </HBox>
+
+            <Label fx:id="lblDatosContacto" text="Datos de contacto: [Ocultos hasta aceptar solicitud]" />
+
+            <Button mnemonicParsing="false" onAction="#onVolverABusquedaClick" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: bold;" text="Volver a Buscar Perfiles" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

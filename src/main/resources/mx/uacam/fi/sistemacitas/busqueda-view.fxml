@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.uacam.fi.sistemacitas.HelloController">
+   <left>
+      <VBox prefHeight="200.0" prefWidth="130.0" spacing="15.0" style="-fx-padding: 10;" BorderPane.alignment="CENTER">
+         <children>
+            <Label style="-fx-font-weight: bold;" text="Filtros" />
+
+            <ComboBox fx:id="cbGenero" prefWidth="150.0" promptText="Género">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="Hombre" />
+                     <String fx:value="Mujer" />
+                     <String fx:value="Ambos" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+
+            <TextField fx:id="txtEdadMax" promptText="Edad Maxima" />
+            <TextField fx:id="txtIntereses" promptText="Intereses" />
+
+            <Button mnemonicParsing="false" onAction="#onBuscarClick" text="Buscar" />
+         </children>
+      </VBox>
+   </left>
+
+   <center>
+      <ListView fx:id="listaResultados" prefHeight="200.0" prefWidth="200.0" style="-fx-padding: 5;" BorderPane.alignment="CENTER">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Ana - 22 años - Le gusta: Programación" />
+               <String fx:value="Carlos - 24 años - Le gusta: Música" />
+               <String fx:value="Valeria - 21 años - Le gusta: Fotografía" />
+            </FXCollections>
+         </items>
+      </ListView>
+   </center>
+
+   <bottom>
+      <HBox alignment="CENTER" spacing="20.0" style="-fx-padding: 15;" BorderPane.alignment="CENTER">
+         <children>
+
+            <Button mnemonicParsing="false" onAction="#onRegresarAPerfilClick" text="Regresar al Perfil" />
+            <Button fx:id="btnVerPerfil" mnemonicParsing="false" onAction="#onContactarClick" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;" text="Contactar Perfil Seleccionado" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
