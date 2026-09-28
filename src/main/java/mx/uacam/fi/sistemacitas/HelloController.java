@@ -177,4 +177,13 @@ public class HelloController {
     protected void onVolverABusquedaClick(ActionEvent event) throws IOException {
         cambiarPantalla(event, "busqueda-view.fxml", "Búsqueda de Personas");
     }
+    @FXML
+    protected void onVerEquipoClick(ActionEvent event) throws IOException {
+        cambiarPantalla(event, "lista_integrantes-view.fxml", "Integrantes del Equipo");
+    }
+    @FXML
+    protected void onRegresarClick(ActionEvent event) throws IOException {
+        
+        cambiarPantalla(event, "login-view.fxml", "Iniciar Sesión");
+    }
 }
